@@ -7,7 +7,7 @@ class ThemeModel extends ChangeNotifier{
   static String CONTAINER_KEY = 'black_key';
   static String SCAFOLD_KEY = 'pink_key';
   Color black = Colors.black;
-  Color cyan = Colors.cyan;
+  Color cyan = Colors.red;
   ThemeModel(){
     toggleTheme();
   }

@@ -7,9 +7,9 @@ class SecondHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ThemeModel>(
+    return ChangeNotifierProvider<ShowTheme>(
       create: (context) {
-        return ThemeModel();
+        return ShowTheme();
       },
       child: const Second(),
     );
@@ -26,7 +26,7 @@ class Second extends StatefulWidget {
 class _SecondState extends State<Second> {
   @override
   Widget build(BuildContext context) {
-    ThemeModel themeModel = Provider.of<ThemeModel>(context, listen: false);
+    ShowTheme themeModel = Provider.of<ShowTheme>(context, listen: false);
     return Scaffold(
       appBar: AppBar(title: const Text('Second'),),
       body: Center(

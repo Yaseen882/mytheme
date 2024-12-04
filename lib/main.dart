@@ -7,9 +7,9 @@ import 'package:theme_provider_flutter/theme_provider.dart';
 enum ThemeType { black, pink, orange }
 
 void main() {
-  runApp(ChangeNotifierProvider<ThemeModel>(
+  runApp(ChangeNotifierProvider<ShowTheme>(
       create: (context) {
-        return ThemeModel();
+        return ShowTheme();
       },
       child: const MyApp()));
 }
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    ThemeModel themeModel = Provider.of<ThemeModel>(context, listen: false);
+    ShowTheme themeModel = Provider.of<ShowTheme>(context, listen: false);
 
     return Scaffold(
       backgroundColor: themeModel.cyan,
@@ -63,8 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
               groupValue: currentTheme,
               onChanged: (colorValue) async {
                 var instance = await SharedPreferences.getInstance();
-                instance.setInt(ThemeModel.CONTAINER_KEY, Colors.black.value);
-                instance.setInt(ThemeModel.SCAFOLD_KEY, Colors.white.value);
+                instance.setInt(ShowTheme.CONTAINER_KEY, Colors.black.value);
+                instance.setInt(ShowTheme.SCAFOLD_KEY, Colors.white.value);
                 setState(
                   () {
                     debugPrint(
@@ -82,8 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
               groupValue: currentTheme,
               onChanged: (colorValue) async {
                 var instance = await SharedPreferences.getInstance();
-                instance.setInt(ThemeModel.CONTAINER_KEY, Colors.pink.value);
-                instance.setInt(ThemeModel.SCAFOLD_KEY, Colors.blue.value);
+                instance.setInt(ShowTheme.CONTAINER_KEY, Colors.pink.value);
+                instance.setInt(ShowTheme.SCAFOLD_KEY, Colors.blue.value);
                 setState(
                   () {
                     debugPrint(
@@ -104,8 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
               groupValue: currentTheme,
               onChanged: (colorValue) async {
                 var instance = await SharedPreferences.getInstance();
-                instance.setInt(ThemeModel.CONTAINER_KEY, Colors.orange.value);
-                instance.setInt(ThemeModel.SCAFOLD_KEY, Colors.cyan.value);
+                instance.setInt(ShowTheme.CONTAINER_KEY, Colors.orange.value);
+                instance.setInt(ShowTheme.SCAFOLD_KEY, Colors.cyan.value);
                 setState(
                   () {
                     debugPrint(

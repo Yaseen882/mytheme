@@ -3,12 +3,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
 
-class ThemeModel extends ChangeNotifier{
+class ShowTheme extends ChangeNotifier{
   static String CONTAINER_KEY = 'black_key';
   static String SCAFOLD_KEY = 'pink_key';
   Color black = Colors.black;
-  Color cyan = Colors.cyan;
-  ThemeModel(){
+  Color cyan = Colors.red;
+  ShowTheme(){
     toggleTheme();
   }
   toggleTheme() async {
